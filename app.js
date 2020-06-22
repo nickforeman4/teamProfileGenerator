@@ -22,21 +22,21 @@ function navigation() {
             name: "menu",
             message: "My Team",
             choices: [
-                "manager",
-                "engineer",
-                "intern",
-                "exit application"
+                "Manager",
+                "Engineer",
+                "Intern",
+                "Exit Application"
             ]
         }
     ]).then(function(response) {
         switch (response.menu) {
-            case "manager":
+            case "Manager":
                 addManager()
                 break;
-            case "engineer":
+            case "Engineer":
                 addEngineer()
                 break;
-            case "intern":
+            case "Intern":
                 addIntern()
                 break;
             default:
@@ -51,22 +51,22 @@ function addManager() {
         {
             type: "input",
             name: "name",
-            message: "Enter Name"
+            message: "Enter Name:"
         },
         {
             type: "input",
             name: "id",
-            message: "Enter ID"
+            message: "Enter ID:"
         },
         {
             type: "input",
             name: "email",
-            message: "Enter Email"
+            message: "Enter Email:"
         },
         {
             type: "input",
             name: "officeNumber",
-            message: "Enter Office Number"
+            message: "Enter Office Number:"
         }
     ]).then(function(response) {
         var myManager = new Manager (response.name, response.id, response.email, response.officeNumber)
@@ -80,22 +80,22 @@ function addEngineer() {
         {
             type: "input",
             name: "name",
-            message: "Enter Name"
+            message: "Enter Name:"
         },
         {
             type: "input",
             name: "id",
-            message: "Enter ID"
+            message: "Enter Team ID:"
         },
         {
             type: "input",
             name: "email",
-            message: "Enter Email"
+            message: "Enter Email:"
         },
         {
             type: "input",
             name: "github",
-            message: "Enter GitHub Info"
+            message: "Enter GitHub User Name:"
         }
     ]).then(function(response) {
         var myEngineer = new Engineer (response.name, response.id, response.email, response.github)
@@ -109,22 +109,22 @@ function addIntern() {
         {
             type: "input",
             name: "name",
-            message: "Enter Name"
+            message: "Enter Name:"
         },
         {
             type: "input",
             name: "id",
-            message: "Enter ID"
+            message: "Enter ID:"
         },
         {
             type: "input",
             name: "email",
-            message: "Enter Email"
+            message: "Enter Email:"
         },
         {
             type: "input",
             name: "school",
-            message: "Enter School Info"
+            message: "Enter School Info:"
         }
     ]).then(function(response) {
         var myIntern = new Intern (response.name, response.id, response.email, response.school)
@@ -220,7 +220,7 @@ var closingHTML = `
 
 </html>`
 var HTML = openHTML + managerHTML + engineerHTML + internHTML + closingHTML
-fs.writeFileSync("./index.html", HTML, function(error) {
+fs.writeFileSync("./output/team.html", HTML, function(error) {
     if (error)
         console.log (error)
         console.log ("fileReturn")
