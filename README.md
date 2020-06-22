@@ -61,7 +61,7 @@ This folder is for the different jest tests.
 
 ## Usage
 
-N/A
+![Screenshot of "My Team" Page](teamProfileGenerator.JPG)
 
 
 ## License
